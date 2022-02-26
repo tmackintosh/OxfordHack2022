@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/ic_background"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -32,17 +32,20 @@
         android:id="@+id/activity_main_ll_buttonContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:orientation="horizontal"
-        android:paddingBottom="18dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_main_fab_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24"
+            app:backgroundTint="#FFFFFF"
             app:elevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -53,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_up_24"
+            app:backgroundTint="#FFFFFF"
             app:elevation="0dp"
             app:layout_constraintLeft_toRightOf="@id/activity_main_fab_favourite"
             app:layout_constraintRight_toLeftOf="@id/activity_main_fab_forward"
@@ -63,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_bookmark_24"
+            app:backgroundTint="#FFFFFF"
             app:elevation="0dp"
             app:layout_constraintLeft_toRightOf="@id/activity_main_fab_dislike"
             app:layout_constraintRight_toLeftOf="@id/activity_main_fab_like"
@@ -73,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_down_24"
+            app:backgroundTint="#FFFFFF"
             app:elevation="0dp"
             app:layout_constraintLeft_toRightOf="@id/activity_main_fab_back"
             app:layout_constraintRight_toLeftOf="@id/activity_main_fab_favourite"
@@ -83,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:backgroundTint="#FFFFFF"
             app:elevation="0dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -91,17 +98,22 @@
 
     <View
         android:id="@+id/activity_main_card_view"
-        android:layout_width="304dp"
-        android:layout_height="509dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:elevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/activity_main_ll_buttonContainer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_abl" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_abl"
+        app:layout_constraintWidth_percent="0.8" />
 
     <TextView
         android:id="@+id/company_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="7dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/activity_main_card_view"
@@ -112,6 +124,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="7dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/activity_main_card_view"
         app:layout_constraintEnd_toEndOf="@+id/activity_main_card_view"
