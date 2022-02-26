@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24"
+            app:elevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -52,8 +53,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_up_24"
-            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_back"
-            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_favourite"
+            app:elevation="0dp"
+            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_favourite"
+            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_forward"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -61,8 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_bookmark_24"
-            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_like"
-            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_dislike"
+            app:elevation="0dp"
+            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_dislike"
+            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_like"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -70,8 +73,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_down_24"
-            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_favourite"
-            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_forward"
+            app:elevation="0dp"
+            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_back"
+            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_favourite"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -79,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:elevation="0dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
