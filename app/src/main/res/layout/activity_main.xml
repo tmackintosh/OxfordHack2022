@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/teal_200">
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/activity_main_tb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_header"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:menu="@menu/menu_main"
+        app:title="Exercises"
+        app:titleTextColor="@color/black" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/activity_main_ll_buttonContainer"
@@ -13,11 +25,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
+        android:paddingBottom="18dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/activity_main_fab_left"
+            android:id="@+id/activity_main_fab_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24"
@@ -30,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_up_24"
-            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_left"
+            app:layout_constraintLeft_toRightOf="@id/activity_main_fab_back"
             app:layout_constraintRight_toLeftOf="@id/activity_main_fab_favourite"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,11 +61,11 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_thumb_down_24"
             app:layout_constraintLeft_toRightOf="@id/activity_main_fab_favourite"
-            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_right"
+            app:layout_constraintRight_toLeftOf="@id/activity_main_fab_forward"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/activity_main_fab_right"
+            android:id="@+id/activity_main_fab_forward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_forward_24"
