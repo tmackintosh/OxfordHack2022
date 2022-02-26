@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FloatingActionButton fab_like, fab_dislike, fab_favourite, fab_back, fab_forward;
     private Toolbar mToolbar;
-    private CardManager cardManager;
+    private CardManager mCardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cardManager = new CardManager();
+        mCardManager = new CardManager();
 
         initUI();
         setListeners();
@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab_favourite = findViewById(R.id.activity_main_fab_favourite);
         fab_back = findViewById(R.id.activity_main_fab_back);
         fab_forward = findViewById(R.id.activity_main_fab_forward);
-
-        mToolbar = findViewById(R.id.activity_main_tb);
     }
 
     private void setListeners() {
@@ -52,23 +50,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.activity_main_fab_back:
                 Toast.makeText(this, "Backward", Toast.LENGTH_SHORT).show();
-                cardManager.swipeLeft();
+                mCardManager.swipeLeft();
                 break;
             case R.id.activity_main_fab_like:
                 Toast.makeText(this, "Like", Toast.LENGTH_SHORT).show();
-                cardManager.addToLikes(cardManager.getCurrentCard());
+                mCardManager.addToLikes(mCardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_favourite:
                 Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
-                cardManager.addToFavourites(cardManager.getCurrentCard());
+                mCardManager.addToFavourites(mCardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_dislike:
                 Toast.makeText(this, "Dislike", Toast.LENGTH_SHORT).show();
-                cardManager.addToDislikes(cardManager.getCurrentCard());
+                mCardManager.addToDislikes(mCardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_forward:
                 Toast.makeText(this, "Forward", Toast.LENGTH_SHORT).show();
-                cardManager.swipeRight();
+                mCardManager.swipeRight();
                 break;
 
         }

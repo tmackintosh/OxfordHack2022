@@ -7,16 +7,26 @@
     tools:context=".MainActivity"
     android:background="@color/teal_200">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.AppBarLayout
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/activity_main_tb"
+        android:id="@+id/activity_main_abl"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/bg_header"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:menu="@menu/menu_main"
-        app:title="Exercises"
-        app:titleTextColor="@color/black" />
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/activity_main_tb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_header"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/menu_main"
+            app:title="Exercises"
+            app:titleTextColor="@color/black" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/activity_main_ll_buttonContainer"
