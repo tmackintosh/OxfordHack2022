@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/teal_200">
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/activity_main_abl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/activity_main_tb"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/bg_header"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_scrollFlags="scroll|enterAlways"
             app:menu="@menu/menu_main"
             app:title="Exercises"
@@ -83,6 +83,35 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/activity_main_card_view"
+        android:layout_width="304dp"
+        android:layout_height="509dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_ll_buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_abl" />
+
+    <TextView
+        android:id="@+id/company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_card_view"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_card_view"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_card_view" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_card_view"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_card_view"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_card_view"
+        app:layout_constraintTop_toBottomOf="@+id/company_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

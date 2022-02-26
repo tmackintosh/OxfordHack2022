@@ -5,14 +5,18 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saltpayhack.cards.Card;
 import com.example.saltpayhack.cards.CardManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FloatingActionButton fab_like, fab_dislike, fab_favourite, fab_back, fab_forward;
+    private View mCardView;
+    private TextView title, rating;
     private Toolbar mToolbar;
     private CardManager mCardManager;
 
@@ -32,6 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab_favourite = findViewById(R.id.activity_main_fab_favourite);
         fab_back = findViewById(R.id.activity_main_fab_back);
         fab_forward = findViewById(R.id.activity_main_fab_forward);
+        mCardView = findViewById(R.id.activity_main_card_view);
+
+        title = findViewById(R.id.company_name);
+        rating = findViewById(R.id.textView2);
+        title.setText(Card.getTestCard().cardInfo.name);
+        rating.setText(String.format("%s", Card.getTestCard().cardInfo.rating));
     }
 
     private void setListeners() {
