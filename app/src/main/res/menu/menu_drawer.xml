@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_drawer_itm_likes"
+            android:icon="@drawable/ic_baseline_thumb_up_24"
+            android:title="Likes" />
+        <item
+            android:id="@+id/menu_drawer_itm_dislikes"
+            android:icon="@drawable/ic_baseline_thumb_down_24"
+            android:title="Dislikes" />
+    </group>
+</menu>

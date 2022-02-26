@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/bg_header.xml" value="0.2265" />
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_options.xml" value="0.2265" />
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2265" />
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/drawable/bg_header.xml" value="0.1" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/drawable/ic_background.xml" value="0.1" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/layout/nav_header_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/menu/menu_drawer.xml" value="0.1796875" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/menu/menu_exercises.xml" value="0.22" />
+        <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/menu/menu_main.xml" value="0.1796875" />
       </map>
     </option>
   </component>
