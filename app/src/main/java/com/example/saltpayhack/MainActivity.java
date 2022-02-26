@@ -7,17 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.saltpayhack.cards.CardManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FloatingActionButton fab_like, fab_dislike, fab_favourite, fab_back, fab_forward;
     private Toolbar mToolbar;
+    private CardManager cardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cardManager = new CardManager();
 
         initUI();
         setListeners();
@@ -43,21 +46,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        System.out.println(view.getId());
+        Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show();
+
         switch (view.getId()) {
             case R.id.activity_main_fab_back:
-                Toast.makeText(this, "Backward", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Backward", Toast.LENGTH_SHORT).show();
+                cardManager.swipeLeft();
                 break;
             case R.id.activity_main_fab_like:
-                Toast.makeText(this, "Like", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Like", Toast.LENGTH_SHORT).show();
+                cardManager.addToLikes(CardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_favourite:
-                Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.activity_main_fab_dislike:
-                Toast.makeText(this, "Dislike", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Dislike", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.activity_main_fab_forward:
-                Toast.makeText(this, "Forward", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Forward", Toast.LENGTH_SHORT).show();
                 break;
 
         }
