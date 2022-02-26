@@ -58,7 +58,7 @@ public class CardManager {
         favourites.add(card);
     }
 
-    public static Card getCurrentCard() {
+    public Card getCurrentCard() {
         return cards.get(currentCardIndex);
     }
 

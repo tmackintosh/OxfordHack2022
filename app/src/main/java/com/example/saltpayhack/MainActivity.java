@@ -56,16 +56,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.activity_main_fab_like:
                 Toast.makeText(this, "Like", Toast.LENGTH_SHORT).show();
-                cardManager.addToLikes(CardManager.getCurrentCard());
+                cardManager.addToLikes(cardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_favourite:
                 Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
+                cardManager.addToFavourites(cardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_dislike:
                 Toast.makeText(this, "Dislike", Toast.LENGTH_SHORT).show();
+                cardManager.addToDislikes(cardManager.getCurrentCard());
                 break;
             case R.id.activity_main_fab_forward:
                 Toast.makeText(this, "Forward", Toast.LENGTH_SHORT).show();
+                cardManager.swipeRight();
                 break;
 
         }
