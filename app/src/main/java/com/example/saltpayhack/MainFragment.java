@@ -64,12 +64,12 @@ public class MainFragment extends Fragment implements
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         mContext = container.getContext();
-        mCompaniesList.add(new CompanyModel(1, "Yelp", 0.2f));
-        mCompaniesList.add(new CompanyModel(2, "Yahoo", 0.6f));
-        mCompaniesList.add(new CompanyModel(3, "Google", 0.2f));
-        mCompaniesList.add(new CompanyModel(4, "Nandos", 0.6f));
-        mCompaniesList.add(new CompanyModel(5, "KFC", 0.2f));
-        mCompaniesList.add(new CompanyModel(6, "Maccies", 0.6f));
+        mCompaniesList.add(new CompanyModel(1, "Yelp"));
+        mCompaniesList.add(new CompanyModel(2, "Yahoo"));
+        mCompaniesList.add(new CompanyModel(3, "Google"));
+        mCompaniesList.add(new CompanyModel(4, "Nandos"));
+        mCompaniesList.add(new CompanyModel(5, "KFC"));
+        mCompaniesList.add(new CompanyModel(6, "Maccies"));
 
         return view;
     }

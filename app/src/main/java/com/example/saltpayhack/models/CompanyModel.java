@@ -5,23 +5,20 @@ public class CompanyModel {
     private int id;
 
     private String companyName;
+    private String address;
 
     private float calculatedRating;
 
-    // (?) What data does the web scraping return
-
-    private float scrapedRating;
-    // location ? -> distance from city centre
-    // social media platforms ?
-    // social media following?
-
+    private float totalRatings; // total reviews left by users online
+    private float locationRating;
+    private float ratingsRating;
+    private float socialMediaPresence;
 
     public CompanyModel() {}
 
-    public CompanyModel(int id, String companyName, float scrapedRating) {
+    public CompanyModel(int id, String companyName) {
         this.id = id;
         this.companyName = companyName;
-        this.scrapedRating = scrapedRating;
     }
 
     public int getId() {
@@ -46,13 +43,5 @@ public class CompanyModel {
 
     public void setCalculatedRating(float calculatedRating) {
         this.calculatedRating = calculatedRating;
-    }
-
-    public float getScrapedRating() {
-        return scrapedRating;
-    }
-
-    public void setScrapedRating(float scrapedRating) {
-        this.scrapedRating = scrapedRating;
     }
 }
