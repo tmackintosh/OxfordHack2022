@@ -8,15 +8,21 @@
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_bookmark_24.xml" value="0.2265" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2235" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.2235" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_options.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_thumb_down_24.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_baseline_thumb_up_24.xml" value="0.2265" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
-        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/drawable/side_nav_bar.xml" value="0.2235" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/card.xml" value="0.264" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/fragment_card.xml" value="0.11018518518518519" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/fragment_dislikes.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/fragment_likes.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/nav_header_main.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/layout/row_card.xml" value="0.264" />
         <entry key="..\:/Users/Bisesh/Documents/Projects/OxHacks2022/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/bhatt/Documents/Repository/AndroidStudio/app/src/main/res/layout/activity_main.xml" value="0.22" />

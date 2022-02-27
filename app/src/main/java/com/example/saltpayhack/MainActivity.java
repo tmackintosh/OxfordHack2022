@@ -9,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
     private Toolbar mToolbar;
+    private FloatingActionButton mExpandableMenuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements
     private void initUI() {
         mDrawerLayout = findViewById(R.id.fragment_main_dl);
         mNavigationView = findViewById(R.id.activity_main_nv_navView);
+        mExpandableMenuButton = findViewById(R.id.menu_button_expand);
 
         mToolbar = findViewById(R.id.activity_main_tb);
         setSupportActionBar(mToolbar);
@@ -40,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements
 
     private void setListener() {
         mNavigationView.setNavigationItemSelectedListener(this);
+        mExpandableMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerLayout.open();
+            }
+        });
     }
 
     private void setNavigation(Bundle savedInstanceState) {
@@ -54,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    @Override
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
