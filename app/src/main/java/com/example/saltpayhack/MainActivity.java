@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements
 
         initUI();
         setListener();
-        setNavigation();
+        setNavigation(savedInstanceState);
     }
 
     private void initUI() {
@@ -49,10 +49,16 @@ public class MainActivity extends AppCompatActivity implements
         mNavigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void setNavigation() {
+    private void setNavigation(Bundle savedInstanceState) {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container,
+                    new MainFragment()).commit();
+            mNavigationView.setCheckedItem(R.id.menu_drawer_itm_main);
+        }
     }
 
     public void onBackPressed() {

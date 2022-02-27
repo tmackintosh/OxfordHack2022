@@ -3,27 +3,16 @@ package com.example.saltpayhack.cards;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import com.example.saltpayhack.DislikesFragment;
-import com.example.saltpayhack.LikesFragment;
-import com.example.saltpayhack.MainActivity;
 import com.example.saltpayhack.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainFragment extends Fragment implements
         View.OnClickListener {
@@ -45,16 +34,16 @@ public class MainFragment extends Fragment implements
         super.onViewCreated(view, savedInstanceState);
 
         initUI(view);
-        // setListeners();
+        setListeners();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_likes, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         mContext = container.getContext();
-        mCardManager = new CardManager();
+        mCardManager = CardManager.getInstance();
 
         return view;
     }

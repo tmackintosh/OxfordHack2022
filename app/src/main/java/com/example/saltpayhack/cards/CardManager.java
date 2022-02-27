@@ -50,8 +50,8 @@ public class CardManager extends AppCompatActivity {
         Card card = Card.getTestCard();
         card.cardInfo.name = "Yay it changed";
 //        Fragment fg = fragmentsMap.getOrDefault(card, new CardFragment());
-        CardFragment fg = MainActivity.getInstance().getNewFragment();
-        MainActivity.getInstance().changeFragment(fg);
+//        CardFragment fg = MainActivity.getInstance().getNewFragment();
+//        MainActivity.getInstance().changeFragment(fg);
     }
 
     public void swipeLeft() {
@@ -63,8 +63,8 @@ public class CardManager extends AppCompatActivity {
         Card card = Card.getTestCard();
         card.cardInfo.name = "Oh we going back now";
 //        Fragment fg = fragmentsMap.getOrDefault(card, new CardFragment());
-        CardFragment fg = MainActivity.getInstance().getNewFragment();
-        MainActivity.getInstance().changeFragment(fg);
+//        CardFragment fg = MainActivity.getInstance().getNewFragment();
+//        MainActivity.getInstance().changeFragment(fg);
     }
 
     public void addToLikes(Card card) {
