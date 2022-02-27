@@ -111,3 +111,5 @@ def get_score_from_json(json_input):
 
 business = input("Enter name: ")
 print(get_score(business))
+go = input("Press Enter to run the SaltPay JSON input analysis. The output will be a printed JSON format.")
+print(get_score_from_json(open("input.json", encoding="UTF-8").read()))
