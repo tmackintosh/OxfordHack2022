@@ -96,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.menu_drawer_itm_dislikes:
                 getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new DislikesFragment()).commit();
                 break;
+            case R.id.menu_drawer_itm_json:
+                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new JsonFragment()).commit();
+                break;
         }
         return true;
     }
