@@ -17,9 +17,16 @@ import android.view.inputmethod.EditorInfo;
 
 import com.example.saltpayhack.adapters.CompanyRecyclerAdapter;
 import com.example.saltpayhack.models.CompanyModel;
+import com.example.saltpayhack.scraping.HttpRequests;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import org.json.JSONException;
+import org.python.core.PyInteger;
+import org.python.core.PyObject;
+import org.python.util.PythonInterpreter;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
@@ -40,6 +47,11 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
+            new HttpRequests().getPlaceByName("KFC");
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
 
         initUI();
         setListener();
