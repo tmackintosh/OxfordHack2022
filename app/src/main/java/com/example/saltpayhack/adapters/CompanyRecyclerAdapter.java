@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,8 +50,15 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CompanyModel company = mCompaniesList.get(position);
         holder.tv_companyName.setText(company.getCompanyName());
+
         //TODO change to calculated rating
-        holder.tv_calculatedRating.setText("0.0/10");
+        holder.tv_calculatedRating.setText("");
+
+        holder.tv_address.setText(company.getAddress());
+        holder.pb_locationRating.setProgress(Math.round(company.getLocationRating()));
+        holder.pb_socialMediaPresence.setProgress(Math.round(company.getSocialMediaPresence()));
+        holder.pb_ratingsRating.setProgress(Math.round(company.getRatingsRating()));
+        holder.pb_totalRatings.setProgress(Math.round(company.getTotalRatings()));
     }
 
     @Override
@@ -103,15 +111,21 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
 
         OnCompanyClickListener onCompanyClickListener;
 
-        TextView tv_calculatedRating, tv_companyName;
+        TextView tv_calculatedRating, tv_companyName, tv_address;
+        ProgressBar pb_locationRating, pb_totalRatings, pb_socialMediaPresence, pb_ratingsRating;
         FloatingActionButton btn_like, btn_dislike;
 
         public ViewHolder(View itemView, OnCompanyClickListener onCompanyClickListener) {
             super(itemView);
             tv_companyName = itemView.findViewById(R.id.row_card_tv_companyName);
+            tv_address = itemView.findViewById(R.id.row_card_tv_address);
             tv_calculatedRating = itemView.findViewById(R.id.row_card_tv_overallRating);
             btn_like = itemView.findViewById(R.id.card_btn_like);
             btn_dislike = itemView.findViewById(R.id.card_btn_dislike);
+            pb_locationRating = itemView.findViewById(R.id.row_card_pb_location);
+            pb_totalRatings = itemView.findViewById(R.id.row_card_pb_totalRatings);
+            pb_socialMediaPresence = itemView.findViewById(R.id.row_card_pb_socialMediaPresence);
+            pb_ratingsRating = itemView.findViewById(R.id.row_card_pb_ratings);
 
             this.onCompanyClickListener = onCompanyClickListener;
             btn_dislike.setOnClickListener(this);

@@ -43,8 +43,12 @@ public class HttpRequests {
                             .collect(Collectors.joining("\n"));
 
                     JSONObject mainObject = new JSONObject(jsonString);
+                    System.out.println(mainObject);
                     JSONArray JsonArray = mainObject.getJSONArray("results");
                     System.out.println(JsonArray);
+
+                    Object s = JsonArray.get(0);
+                    System.out.println(s);
                 } catch (JSONException | IOException e) {
                     e.printStackTrace();
                 }

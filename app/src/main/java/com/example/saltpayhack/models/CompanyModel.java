@@ -44,4 +44,44 @@ public class CompanyModel {
     public void setCalculatedRating(float calculatedRating) {
         this.calculatedRating = calculatedRating;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public float getTotalRatings() {
+        return totalRatings;
+    }
+
+    public void setTotalRatings(float totalRatings) {
+        this.totalRatings = totalRatings;
+    }
+
+    public float getLocationRating() {
+        return locationRating;
+    }
+
+    public void setLocationRating(float locationRating) {
+        this.locationRating = locationRating;
+    }
+
+    public float getRatingsRating() {
+        return ratingsRating;
+    }
+
+    public void setRatingsRating(float ratingsRating) {
+        this.ratingsRating = ratingsRating;
+    }
+
+    public float getSocialMediaPresence() {
+        return socialMediaPresence;
+    }
+
+    public void setSocialMediaPresence(float socialMediaPresence) {
+        this.socialMediaPresence = socialMediaPresence;
+    }
 }
