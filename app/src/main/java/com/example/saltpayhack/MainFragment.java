@@ -3,12 +3,19 @@ package com.example.saltpayhack;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,14 +31,22 @@ public class MainFragment extends Fragment implements
 
     // UI Components
     private RecyclerView mRecyclerView;
+    private Toolbar mToolbar;
 
     // Variables
     private Context mContext;
     private CompanyRecyclerAdapter mCompanyRecyclerAdapter;
-    private ArrayList<CompanyModel> mCompaniesList = new ArrayList<>();
+    public ArrayList<CompanyModel> mCompaniesList = new ArrayList<>();
+
+    private static MainFragment instance;
 
     public MainFragment() {
+        instance = this;
+    }
 
+    public static MainFragment getInstance() {
+        if (instance == null) instance = new MainFragment();
+        return instance;
     }
 
     @Override
@@ -65,6 +80,9 @@ public class MainFragment extends Fragment implements
 
     private void initUI(View view) {
         mRecyclerView = view.findViewById(R.id.fragment_main_rv);
+        mToolbar = view.findViewById(R.id.activity_main_tb);
+        setHasOptionsMenu(true);
+
     }
 
     private void setListeners() {
@@ -90,4 +108,32 @@ public class MainFragment extends Fragment implements
                 break;
         }
     }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.menu_itm_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        System.out.println(searchView);
+        System.out.println(searchItem);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                System.out.println("Submitted");
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                System.out.println("Test");
+                mCompanyRecyclerAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
 }

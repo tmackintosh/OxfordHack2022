@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +17,10 @@ import com.example.saltpayhack.models.CompanyModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecyclerAdapter.ViewHolder>{
+public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecyclerAdapter.ViewHolder>
+    implements Filterable {
 
     // Constants
     private static final String TAG = "CompanyRecyclerAdapter";
@@ -25,11 +29,13 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
     private Context mContext;
     private OnCompanyClickListener mOnCompanyClickListener;
     private ArrayList<CompanyModel> mCompaniesList;
+    private ArrayList<CompanyModel> mCompaniesListFull;
 
     public CompanyRecyclerAdapter(Context context, ArrayList<CompanyModel> companiesList, OnCompanyClickListener onCompanyClickListener) {
         mContext = context;
         mCompaniesList = companiesList;
         mOnCompanyClickListener = onCompanyClickListener;
+        mCompaniesListFull = new ArrayList<>(mCompaniesList);
     }
 
     @NonNull
@@ -56,6 +62,43 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
     public int getItemCount() {
         return mCompaniesList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return companyFilter;
+    }
+
+    private final Filter companyFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<CompanyModel> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(mCompaniesListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (CompanyModel exercise : mCompaniesListFull) {
+                    if (exercise.getCompanyName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(exercise);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            System.out.println(results.values);
+            System.out.println(results.count);
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            mCompaniesList.clear();
+            mCompaniesList.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
     public interface OnCompanyClickListener {
         void onCompanyClick(int position, View view);
@@ -85,4 +128,5 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
             onCompanyClickListener.onCompanyClick(getBindingAdapterPosition(), view);
         }
     }
+
 }
