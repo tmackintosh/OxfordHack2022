@@ -89,18 +89,15 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <FrameLayout
-            android:id="@+id/activity_main_card_view"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_main_rv"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#FFFFFF"
-            android:elevation="6dp"
+            android:layout_marginTop="1dp"
             app:layout_constraintBottom_toTopOf="@+id/fragment_main_ll_buttonContainer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.7"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragment_main_tb"
-            app:layout_constraintWidth_percent="0.8" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_main_tb" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
