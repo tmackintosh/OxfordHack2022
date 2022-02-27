@@ -7,19 +7,47 @@ SOCIAL_SCRAPER_ENGINE_ID = "1825f517354ca3718"
 API_KEY = "AIzaSyDsRiDvlwLUNwqaExJoivtP_xE1_BicHio"
 
 def get_place_by_name(name):
+    """
+    Calls the Google Maps Platform API to search with the query given.
+
+    @input name string of search query
+    @returns list decoded JSON response from Google API
+    """
+
     r = requests.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + name + "&key=" + API_KEY)
     return r.json()
 
 def get_social_search(query):
+    """
+    Calls the Google Custom Search Engine to scrape social media platforms.
+
+    @input query string of search query
+    @returns list decoded JSON response from Google API
+    """
+
     r = requests.get("https://customsearch.googleapis.com/customsearch/v1?cx=" + SOCIAL_SCRAPER_ENGINE_ID + "&q=" + query + "&key=" + API_KEY)
     return r.json()
 
 def get_lat_lng_from_place(place):
+    """
+    Returns longitude and latitude values for the place given.
+
+    @input list place object to find position of
+    @returns latitude, longitude float of the long and lat values
+    """
+
     geometry = place["geometry"]
     location = geometry["location"]
     return location["lat"], location["lng"]
 
 def get_city_name(place):
+    """
+    Returns the city part of an address of the given place.
+
+    @input list place object to find city name of
+    @returns string of the city name
+    """
+
     try:
         compound_code = place["plus_code"]["compound_code"]
         first_space = compound_code.find(" ")
@@ -29,6 +57,14 @@ def get_city_name(place):
     return compound_code[first_space + 1:]
 
 def get_distance_from_centre(place, city):
+    """
+    Gets the distance between a place and a city.
+
+    @input list place object of the place to compare
+    @input list city object of the city to compare
+    @returns float of the distance between the place and the city
+    """
+
     place_lat, place_lng = get_lat_lng_from_place(place)
     city_lat, city_lng = get_lat_lng_from_place(city)
 
@@ -36,6 +72,13 @@ def get_distance_from_centre(place, city):
     return ((place_lat - city_lat) ** 2) + ((place_lng - city_lng) ** 2)
 
 def get_total_social_search_results(place):
+    """
+    Finds the number of search results that were returned by the place object
+
+    @input list place object that was returned by the search query
+    @returns int of how many search results were returned in the query
+    """
+
     search_results_object = get_social_search(place["name"])
     top_search_result = search_results_object["queries"]["request"][0]
 
@@ -45,6 +88,14 @@ def get_total_social_search_results(place):
         return 0
 
 def get_location_score(place, city):
+    """
+    Calculates the location part of the score.
+
+    @input list place object of the business location
+    @input list city object of the city to compare location with
+    @returns int of location score
+    """
+
     distance_from_centre = get_distance_from_centre(place, city)
     score = 3 - ((distance_from_centre * (10 ** 3)) / 3)
 
@@ -54,6 +105,13 @@ def get_location_score(place, city):
     return score
 
 def get_social_score(place):
+    """
+    Calculates the social presence part of the score.
+
+    @input list place object of the business to assess social presence
+    @returns int of calculated social score
+    """
+
     number_of_social_search_results = int(get_total_social_search_results(place))
 
     if number_of_social_search_results == 0:
@@ -69,6 +127,13 @@ def get_social_score(place):
     return score
 
 def get_score(place_name):
+    """
+    Calculates the score between 1 and 10 for a given business name
+
+    @input place_name string of where the user would like to assess the score of
+    @returns string JSON formatted with information about the business that closest matches the place_name input
+    """
+
     places = get_place_by_name(place_name)
 
     for place in places["results"]:
@@ -99,6 +164,12 @@ def get_score(place_name):
         return json.dumps(result_output)
 
 def get_score_from_json(json_input):
+    """
+    Calculates and finds information for all queries contained in the JSON file, and returns a newly constructed JSON.
+
+    @input json_input custom SaltPay JSON-formatted string
+    @returns custom JSON-formatted string
+    """
     readable = json.loads(json_input)
     output = []
 
