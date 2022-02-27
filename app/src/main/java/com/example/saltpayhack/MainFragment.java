@@ -23,6 +23,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.saltpayhack.adapters.CompanyRecyclerAdapter;
 import com.example.saltpayhack.models.CompanyModel;
 
+import org.python.core.PyInteger;
+import org.python.core.PyObject;
+import org.python.util.PythonInterpreter;
+
 import java.util.ArrayList;
 
 public class MainFragment extends Fragment implements

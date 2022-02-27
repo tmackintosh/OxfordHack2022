@@ -15,26 +15,14 @@
         android:layout_height="24dp"
         android:layout_marginStart="20dp"
         android:elevation="6dp"
-        android:text="Accessibility?"
-        android:textAlignment="center"
+        android:text="Ratings"
+        android:textAlignment="textStart"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/card_star_21"
         app:layout_constraintEnd_toStartOf="@+id/card_star_21"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/card_star_21" />
-
-    <ImageView
-        android:id="@+id/card_star_44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_45"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_45"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_43"
-        app:layout_constraintTop_toTopOf="@+id/card_star_45" />
 
     <ImageView
         android:id="@+id/card_star_11"
@@ -49,23 +37,10 @@
         app:layout_constraintTop_toTopOf="@+id/card_star_12" />
 
     <ImageView
-        android:id="@+id/card_star_45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_44"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_35" />
-
-    <ImageView
         android:id="@+id/card_star_35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:elevation="6dp"
         android:src="@drawable/ic_baseline_star_24"
@@ -73,21 +48,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_star_34"
         app:layout_constraintTop_toBottomOf="@+id/card_star_25" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="98dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="20dp"
-        android:elevation="6dp"
-        android:text="Accessibility?"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_41"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_41"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/card_star_41" />
 
     <ImageView
         android:id="@+id/card_star_12"
@@ -100,18 +60,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_star_11"
         app:layout_constraintTop_toTopOf="@+id/card_star_13" />
-
-    <ImageView
-        android:id="@+id/card_star_43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_44"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_44"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_42"
-        app:layout_constraintTop_toTopOf="@+id/card_star_44" />
 
     <ImageView
         android:id="@+id/card_star_14"
@@ -131,8 +79,8 @@
         android:layout_height="24dp"
         android:layout_marginStart="20dp"
         android:elevation="6dp"
-        android:text="Accessibility?"
-        android:textAlignment="center"
+        android:text="Social Presence"
+        android:textAlignment="textStart"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/card_star_11"
         app:layout_constraintEnd_toStartOf="@+id/card_star_11"
@@ -146,8 +94,8 @@
         android:layout_height="24dp"
         android:layout_marginStart="20dp"
         android:elevation="6dp"
-        android:text="Accessibility?"
-        android:textAlignment="center"
+        android:text="Accessibility"
+        android:textAlignment="textStart"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/card_star_31"
         app:layout_constraintEnd_toStartOf="@+id/card_star_31"
@@ -171,7 +119,7 @@
         android:id="@+id/card_star_15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:elevation="6dp"
         android:src="@drawable/ic_baseline_star_24"
@@ -196,7 +144,7 @@
         android:id="@+id/card_star_25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:elevation="6dp"
         android:src="@drawable/ic_baseline_star_24"
@@ -216,18 +164,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/card_star_32" />
-
-    <ImageView
-        android:id="@+id/card_star_41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_42"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_42"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/card_star_42" />
 
     <ImageView
         android:id="@+id/card_star_24"
@@ -278,18 +214,6 @@
         app:layout_constraintTop_toTopOf="@+id/card_star_33" />
 
     <ImageView
-        android:id="@+id/card_star_42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_43"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_43"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_41"
-        app:layout_constraintTop_toTopOf="@+id/card_star_43" />
-
-    <ImageView
         android:id="@+id/card_star_23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -332,7 +256,7 @@
         android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:elevation="6dp"
-        android:text="0.00/10.0"
+        android:text="0.0/10.0"
         android:textAlignment="center"
         android:textColor="#555555"
         android:textSize="24sp"
@@ -344,7 +268,6 @@
         android:id="@+id/card_btn_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
         android:clickable="true"
         android:elevation="6dp"
         app:backgroundTint="#FFFFFF"
@@ -353,14 +276,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_btn_dislike"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_43"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/ic_baseline_thumb_up_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/card_btn_dislike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
         android:clickable="true"
         android:elevation="6dp"
         app:backgroundTint="#FFFFFF"
@@ -369,20 +291,19 @@
         app:layout_constraintEnd_toStartOf="@+id/card_btn_like"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_41"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/ic_baseline_thumb_down_24" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="1dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="75dp"
         android:background="#000000"
         android:elevation="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/card_btn_dislike"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_41"
+        app:layout_constraintTop_toBottomOf="@+id/card_star_35"
         app:srcCompat="@android:drawable/divider_horizontal_textfield" />
 
 

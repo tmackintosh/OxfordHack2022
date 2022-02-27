@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.saltpayhack"
-        minSdk 26
+        minSdk 30
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -24,6 +24,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
 }
 
@@ -43,4 +47,5 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation 'org.python:jython-slim:2.7.2'
 }
