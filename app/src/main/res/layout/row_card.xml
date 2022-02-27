@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drow_card_cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="98dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:text="Accessibility?"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_21"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_21"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_star_21" />
+
+    <ImageView
+        android:id="@+id/card_star_44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_45"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_45"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_43"
+        app:layout_constraintTop_toTopOf="@+id/card_star_45" />
+
+    <ImageView
+        android:id="@+id/card_star_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_12"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/card_star_12" />
+
+    <ImageView
+        android:id="@+id/card_star_45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_44"
+        tools:layout_editor_absoluteY="257dp" />
+
+    <ImageView
+        android:id="@+id/card_star_35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_34"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="98dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:text="Accessibility?"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_41"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_41"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_star_41" />
+
+    <ImageView
+        android:id="@+id/card_star_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_13"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_11"
+        app:layout_constraintTop_toTopOf="@+id/card_star_13" />
+
+    <ImageView
+        android:id="@+id/card_star_43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_44"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_44"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_42"
+        app:layout_constraintTop_toTopOf="@+id/card_star_44" />
+
+    <ImageView
+        android:id="@+id/card_star_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_15"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_13"
+        app:layout_constraintTop_toTopOf="@+id/card_star_15" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="98dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:text="Accessibility?"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_11"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_star_11" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="98dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:text="Accessibility?"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_31"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_31"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_star_31" />
+
+    <ImageView
+        android:id="@+id/card_star_34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_35"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_35"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_33"
+        app:layout_constraintTop_toTopOf="@+id/card_star_35" />
+
+    <ImageView
+        android:id="@+id/card_star_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_14"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/card_star_33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_34"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_34"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_32"
+        app:layout_constraintTop_toTopOf="@+id/card_star_34" />
+
+    <ImageView
+        android:id="@+id/card_star_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_24"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <ImageView
+        android:id="@+id/card_star_31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_32"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_32"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/card_star_32" />
+
+    <ImageView
+        android:id="@+id/card_star_41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_42"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_42"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="@+id/card_star_42" />
+
+    <ImageView
+        android:id="@+id/card_star_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_25"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_25"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_23"
+        app:layout_constraintTop_toTopOf="@+id/card_star_25" />
+
+    <ImageView
+        android:id="@+id/card_star_21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_22"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_22"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/card_star_22" />
+
+    <ImageView
+        android:id="@+id/card_star_13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_14"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_12"
+        app:layout_constraintTop_toTopOf="@+id/card_star_14" />
+
+    <ImageView
+        android:id="@+id/card_star_32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_33"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_33"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_31"
+        app:layout_constraintTop_toTopOf="@+id/card_star_33" />
+
+    <ImageView
+        android:id="@+id/card_star_42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_43"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_43"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_41"
+        app:layout_constraintTop_toTopOf="@+id/card_star_43" />
+
+    <ImageView
+        android:id="@+id/card_star_23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_24"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_24"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_22"
+        app:layout_constraintTop_toTopOf="@+id/card_star_24" />
+
+    <ImageView
+        android:id="@+id/card_star_22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/card_star_23"
+        app:layout_constraintEnd_toStartOf="@+id/card_star_23"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_star_21"
+        app:layout_constraintTop_toTopOf="@+id/card_star_23" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="307dp"
+        android:layout_height="49dp"
+        android:text="A company"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:text="0.00/10.0"
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton3"
+        app:layout_constraintTop_toBottomOf="@+id/card_star_43"
+        app:srcCompat="@drawable/ic_baseline_thumb_up_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_star_41"
+        app:srcCompat="@drawable/ic_baseline_thumb_down_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
