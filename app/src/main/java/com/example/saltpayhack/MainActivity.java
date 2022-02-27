@@ -89,16 +89,9 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Log.d(TAG, "onNavigationItemSelected: HERE");
         switch (item.getItemId()) {
             case R.id.menu_drawer_itm_main:
                 getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new MainFragment()).commit();
-                break;
-            case R.id.menu_drawer_itm_likes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new LikesFragment()).commit();
-                break;
-            case R.id.menu_drawer_itm_dislikes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new DislikesFragment()).commit();
                 break;
             case R.id.menu_drawer_itm_json:
                 getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new JsonFragment()).commit();

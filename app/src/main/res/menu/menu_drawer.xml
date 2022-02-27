@@ -19,7 +19,7 @@
         <item
             android:id="@+id/menu_drawer_itm_json"
             android:icon="@drawable/ic_baseline_json"
-            android:title="Json"
+            android:title="JSON"
             />
     </group>
 </menu>

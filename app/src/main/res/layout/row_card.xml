@@ -13,305 +13,105 @@
         android:id="@+id/row_card_tv_totalRatings"
         android:layout_width="98dp"
         android:layout_height="24dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:elevation="6dp"
         android:text="Total ratings"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_21"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_21"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/card_star_21" />
+        app:layout_constraintStart_toStartOf="@id/row_card_tv_location"
+        app:layout_constraintTop_toBottomOf="@id/row_card_tv_location"
+        tools:layout_editor_absoluteY="185dp" />
 
-    <ImageView
-        android:id="@+id/card_star_44"
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/row_card_pb_location"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_45"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_45"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_43"
-        app:layout_constraintTop_toTopOf="@+id/card_star_45" />
-
-    <ImageView
-        android:id="@+id/card_star_11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_12"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/row_card_tv_location"
-        app:layout_constraintTop_toTopOf="@+id/card_star_12" />
-
-    <ImageView
-        android:id="@+id/card_star_45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_44"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_35" />
-
-    <ImageView
-        android:id="@+id/card_star_35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_34"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_25" />
+        android:layout_marginLeft="20dp"
+        android:progress="50"
+        android:progressTint="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="@id/row_card_tv_location"
+        app:layout_constraintLeft_toRightOf="@id/row_card_tv_location"
+        app:layout_constraintRight_toRightOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toTopOf="@id/row_card_tv_location" />
 
     <TextView
         android:id="@+id/row_card_tv_socialMediaPresence"
         android:layout_width="98dp"
         android:layout_height="24dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:elevation="6dp"
         android:text="Social Media"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_41"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_41"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/card_star_41" />
+        app:layout_constraintLeft_toLeftOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toBottomOf="@id/row_card_tv_ratingsRating"
+        tools:layout_editor_absoluteY="283dp" />
 
-    <ImageView
-        android:id="@+id/card_star_12"
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/row_card_pb_socialMediaPresence"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_13"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_11"
-        app:layout_constraintTop_toTopOf="@+id/card_star_13" />
-
-    <ImageView
-        android:id="@+id/card_star_43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_44"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_44"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_42"
-        app:layout_constraintTop_toTopOf="@+id/card_star_44" />
-
-    <ImageView
-        android:id="@+id/card_star_14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_15"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_13"
-        app:layout_constraintTop_toTopOf="@+id/card_star_15" />
+        android:layout_marginLeft="20dp"
+        android:progress="80"
+        android:progressTint="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="@id/row_card_tv_socialMediaPresence"
+        app:layout_constraintLeft_toRightOf="@id/row_card_tv_ratingsRating"
+        app:layout_constraintRight_toRightOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toTopOf="@id/row_card_tv_socialMediaPresence" />
 
     <TextView
         android:id="@+id/row_card_tv_location"
         android:layout_width="98dp"
         android:layout_height="24dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:elevation="6dp"
         android:text="Location"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_11"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/card_star_11" />
+        app:layout_constraintLeft_toLeftOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toBottomOf="@+id/row_card_tv_overallRating"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <ProgressBar
+        android:id="@+id/row_card_pb_totalRatings"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:progress="30"
+        android:progressTint="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="@id/row_card_tv_totalRatings"
+        app:layout_constraintLeft_toRightOf="@id/row_card_tv_location"
+        app:layout_constraintRight_toRightOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toTopOf="@id/row_card_tv_totalRatings" />
 
     <TextView
         android:id="@+id/row_card_tv_ratingsRating"
         android:layout_width="98dp"
         android:layout_height="24dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:elevation="6dp"
         android:text="Ratings"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_31"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_31"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/card_star_31" />
+        app:layout_constraintLeft_toLeftOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toBottomOf="@id/row_card_tv_totalRatings"
+        tools:layout_editor_absoluteY="234dp" />
 
-    <ImageView
-        android:id="@+id/card_star_34"
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/row_card_pb_ratings"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_35"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_35"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_33"
-        app:layout_constraintTop_toTopOf="@+id/card_star_35" />
-
-    <ImageView
-        android:id="@+id/card_star_15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_14"
-        app:layout_constraintTop_toBottomOf="@+id/row_card_tv_overallRating" />
-
-    <ImageView
-        android:id="@+id/card_star_33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_34"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_34"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_32"
-        app:layout_constraintTop_toTopOf="@+id/card_star_34" />
-
-    <ImageView
-        android:id="@+id/card_star_25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_24"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_15" />
-
-    <ImageView
-        android:id="@+id/card_star_31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_32"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_32"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/row_card_tv_ratingsRating"
-        app:layout_constraintTop_toTopOf="@+id/card_star_32" />
-
-    <ImageView
-        android:id="@+id/card_star_41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_42"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_42"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/row_card_tv_socialMediaPresence"
-        app:layout_constraintTop_toTopOf="@+id/card_star_42" />
-
-    <ImageView
-        android:id="@+id/card_star_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_25"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_25"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_23"
-        app:layout_constraintTop_toTopOf="@+id/card_star_25" />
-
-    <ImageView
-        android:id="@+id/card_star_21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_22"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_22"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/row_card_tv_totalRatings"
-        app:layout_constraintTop_toTopOf="@+id/card_star_22" />
-
-    <ImageView
-        android:id="@+id/card_star_13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_14"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_12"
-        app:layout_constraintTop_toTopOf="@+id/card_star_14" />
-
-    <ImageView
-        android:id="@+id/card_star_32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_33"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_33"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_31"
-        app:layout_constraintTop_toTopOf="@+id/card_star_33" />
-
-    <ImageView
-        android:id="@+id/card_star_42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_43"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_43"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_41"
-        app:layout_constraintTop_toTopOf="@+id/card_star_43" />
-
-    <ImageView
-        android:id="@+id/card_star_23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_24"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_24"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_22"
-        app:layout_constraintTop_toTopOf="@+id/card_star_24" />
-
-    <ImageView
-        android:id="@+id/card_star_22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:src="@drawable/ic_baseline_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/card_star_23"
-        app:layout_constraintEnd_toStartOf="@+id/card_star_23"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/card_star_21"
-        app:layout_constraintTop_toTopOf="@+id/card_star_23" />
+        android:layout_marginLeft="20dp"
+        android:progress="100"
+        android:progressTint="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="@id/row_card_tv_ratingsRating"
+        app:layout_constraintLeft_toRightOf="@id/row_card_tv_ratingsRating"
+        app:layout_constraintRight_toRightOf="@id/row_card_tv_overallRating"
+        app:layout_constraintTop_toTopOf="@id/row_card_tv_ratingsRating" />
 
     <TextView
         android:id="@+id/row_card_tv_companyName"
@@ -344,7 +144,6 @@
         android:id="@+id/card_btn_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
         android:clickable="true"
         android:elevation="6dp"
         app:backgroundTint="#FFFFFF"
@@ -353,14 +152,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_btn_dislike"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_43"
         app:srcCompat="@drawable/ic_baseline_thumb_up_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/card_btn_dislike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
         android:clickable="true"
         android:elevation="6dp"
         app:backgroundTint="#FFFFFF"
@@ -369,26 +166,26 @@
         app:layout_constraintEnd_toStartOf="@+id/card_btn_like"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_41"
+        app:layout_constraintTop_toBottomOf="@id/row_card_iv_lineSeparator"
         app:srcCompat="@drawable/ic_baseline_thumb_down_24" />
 
     <ImageView
         android:id="@+id/row_card_iv_lineSeparator"
         android:layout_width="200dp"
         android:layout_height="1dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:background="#000000"
         android:elevation="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/card_btn_dislike"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_star_41"
+        app:layout_constraintTop_toBottomOf="@id/row_card_tv_address"
         app:srcCompat="@android:drawable/divider_horizontal_textfield" />
 
     <TextView
         android:id="@+id/row_card_tv_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:elevation="6dp"
         android:gravity="center"
         android:text="Address"
