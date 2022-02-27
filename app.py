@@ -2,6 +2,9 @@ from math import log
 import json
 import requests
 
+# Constants
+# API fields are only used for Get requests that are publicly available anyway.
+# They have been disabled as of the Oxford Hack 2022 finishing
 FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
 SOCIAL_SCRAPER_ENGINE_ID = "1825f517354ca3718"
 API_KEY = "AIzaSyDsRiDvlwLUNwqaExJoivtP_xE1_BicHio"
@@ -48,6 +51,8 @@ def get_city_name(place):
     @returns string of the city name
     """
 
+    # We don't know how to determine whether part of a JSON file exist without
+    # first throwing an exception, so catch it.
     try:
         compound_code = place["plus_code"]["compound_code"]
         first_space = compound_code.find(" ")
@@ -82,6 +87,8 @@ def get_total_social_search_results(place):
     search_results_object = get_social_search(place["name"])
     top_search_result = search_results_object["queries"]["request"][0]
 
+    # We don't know how to determine whether part of a JSON file exist without
+    # first throwing an exception, so catch it.
     try:
         return top_search_result["totalResults"]
     except:
@@ -97,6 +104,7 @@ def get_location_score(place, city):
     """
 
     distance_from_centre = get_distance_from_centre(place, city)
+    # Score cap of 2
     score = 3 - ((distance_from_centre * (10 ** 3)) / 3)
 
     if score < 0:
@@ -121,6 +129,7 @@ def get_social_score(place):
 
     score = order_of_magnitude / 3.5
 
+    # Score cap of 3
     if score > 3:
         score = 3
 
@@ -138,6 +147,8 @@ def get_score(place_name):
 
     for place in places["results"]:
         city_name = get_city_name(place)
+        # It is possible that the search result wasn't indiciated as a business (such as a street or a house)
+        # and hence doesn't have enough information to continue.
         if city_name == -1:
             continue
 
@@ -174,7 +185,12 @@ def get_score_from_json(json_input):
     output = []
 
     for business in readable:
+        # We've found that utilizing web APIs means that the exact business can be pinpointed by
+        # exclusively knowing the name.
+        # It is possible to cross-check the information returned with the information given
+        # in other elements of the JSON input, however we didn't have enough time to implement this.
         name = business["name"]
+
         print("Assessing", name)
         output.append(get_score(name))
 
