@@ -1,6 +1,5 @@
 from math import log
 import json
-from numpy import number
 import requests
 
 FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
@@ -14,16 +13,6 @@ def get_place_by_name(name):
 def get_social_search(query):
     r = requests.get("https://customsearch.googleapis.com/customsearch/v1?cx=" + SOCIAL_SCRAPER_ENGINE_ID + "&q=" + query + "&key=" + API_KEY)
     return r.json()
-
-def get_place_details(place_id):
-    r = requests.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place_id + "&key=" + API_KEY)
-    return r.json()
-
-def get_place_reviews(place_details):
-    try:
-        return place_details["result"]["reviews"]
-    except:
-        return ["No reviews available."]
 
 def get_lat_lng_from_place(place):
     geometry = place["geometry"]
@@ -119,3 +108,6 @@ def get_score_from_json(json_input):
         output.append(get_score(name))
 
     return output
+
+business = input("Enter name: ")
+print(get_score(business))
