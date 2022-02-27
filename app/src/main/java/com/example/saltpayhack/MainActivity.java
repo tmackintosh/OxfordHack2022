@@ -2,29 +2,43 @@ package com.example.saltpayhack;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saltpayhack.cards.Card;
+import com.example.saltpayhack.cards.CardFragment;
 import com.example.saltpayhack.cards.CardManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+
 
     private FloatingActionButton fab_like, fab_dislike, fab_favourite, fab_back, fab_forward;
     private View mCardView;
     private TextView title, rating;
     private Toolbar mToolbar;
     private CardManager mCardManager;
+    private FragmentManager fm;
+    private static MainActivity instance;
+
+    public static MainActivity getInstance() {
+        if (instance == null) instance = new MainActivity();
+        return instance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCardManager = new CardManager();
+        mCardManager = CardManager.getInstance();
 
         initUI();
         setListeners();
@@ -81,4 +95,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    public void changeFragment (CardFragment fragment) {
+//        fm =  getSupportFragmentManager();
+        System.out.println(getSupportFragmentManager());
+        System.out.println(getFragmentManager());
+        fragment = new CardFragment();
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+                .replace(R.id.activity_main_card_view, fragment)
+                .commit();
+    }
+
+    public CardFragment getNewFragment() {
+        return new CardFragment();
+    }
+
 }

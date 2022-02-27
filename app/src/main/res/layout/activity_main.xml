@@ -90,7 +90,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <View
+        <FrameLayout
             android:id="@+id/activity_main_card_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
