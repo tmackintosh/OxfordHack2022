@@ -35,50 +35,21 @@ public class HttpRequests {
         con.setRequestProperty("accept", "application/json");
         new Thread(new Runnable() {
             public void run() {
-                InputStream inputStream = null;
                 try {
-                    inputStream = con.getInputStream();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                String jsonString = new BufferedReader(
-                        new InputStreamReader(inputStream, StandardCharsets.UTF_8))
-                        .lines()
-                        .collect(Collectors.joining("\n"));
+                    InputStream inputStream = con.getInputStream();
+                    String jsonString = new BufferedReader(
+                            new InputStreamReader(inputStream, StandardCharsets.UTF_8))
+                            .lines()
+                            .collect(Collectors.joining("\n"));
 
-                JSONObject mainObject = null;
-                try {
-                    mainObject = new JSONObject(jsonString);
-                } catch (JSONException e) {
+                    JSONObject mainObject = new JSONObject(jsonString);
+                    JSONArray JsonArray = mainObject.getJSONArray("results");
+                    System.out.println(JsonArray);
+                } catch (JSONException | IOException e) {
                     e.printStackTrace();
                 }
-                JSONArray JsonArray = null;
-                try {
-                    JsonArray = mainObject.getJSONArray("results");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    JSONObject resultObj = JsonArray.getJSONObject(0);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(JsonArray);
             }
         }).start();
-
-
-
-//        for (int i = 0; i < JsonArray.length(); i++) {
-//            JSONObject jsonObject = JsonArray.getJSONObject(i);
-//
-//            String id=jsonObject.getString("ID");
-//            String projectname=jsonObject.getString("project_name");
-//            String content=jsonObject.getString("project_content");
-//
-//        }
-
-    }
 
 //    // Now it's "open", we can set the request method, headers etc.
 //connection.setRequestProperty("accept", "application/json");
@@ -101,4 +72,5 @@ public class HttpRequests {
 //    r = requests.get("https://customsearch.googleapis.com/customsearch/v1?cx=" + SOCIAL_SCRAPER_ENGINE_ID + "&q=" + query + "&key=" + API_KEY)
 //            return r.json()
 //
+    }
 }
