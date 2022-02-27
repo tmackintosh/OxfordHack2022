@@ -1,5 +1,6 @@
+from math import log
+from numpy import number
 import requests
-import json
 
 FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
 SOCIAL_SCRAPER_ENGINE_ID = "1825f517354ca3718"
@@ -33,9 +34,8 @@ def get_city_name(place):
         compound_code = place["plus_code"]["compound_code"]
         first_space = compound_code.find(" ")
     except KeyError:
-        compound_code = place["formatted_address"]
-        first_space = compound_code.find(",")
-
+        return -1
+        
     return compound_code[first_space + 1:]
 
 def get_distance_from_centre(place, city):
@@ -50,9 +50,31 @@ def get_total_social_search_results(place):
     top_search_result = search_results_object["queries"]["request"][0]
     return top_search_result["totalResults"]
 
+def get_location_score(place, city):
+    distance_from_centre = get_distance_from_centre(place, city)
+    print(distance_from_centre)
+    print(city["name"])
+    score = 2 - (distance_from_centre * (10 ** 3))
+
+    if score < 0:
+        score = 0
+
+    return score
+
+def get_social_score(place):
+    number_of_social_search_results = int(get_total_social_search_results(place))
+    order_of_magnitude = int(log(number_of_social_search_results, 10))
+    score = order_of_magnitude / 3.5
+
+    if score > 3:
+        score = 3
+
+    return score
+
 place_name = input("Enter place: ")
 
 places = get_place_by_name(place_name)
+print(places["status"])
 
 for place in places["results"]:
     place_id = place["place_id"]
@@ -60,7 +82,17 @@ for place in places["results"]:
     place_reviews = get_place_reviews(place_details)
 
     city_name = get_city_name(place)
+    if city_name == -1:
+        continue
+
     city = get_place_by_name(city_name)["results"][0]
 
-    distance_from_centre = get_distance_from_centre(place, city)
-    number_of_social_search_results = get_total_social_search_results(place)
+    location_score = get_location_score(place, city)
+    ratings_score = place["rating"]
+    social_score = get_social_score(place)
+
+    total_score = ratings_score + location_score + social_score
+    print("Score:", int(total_score))
+    print("Ratings:", ratings_score)
+    print("Location:", location_score)
+    print("Social:", social_score)
