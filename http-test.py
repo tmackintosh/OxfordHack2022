@@ -1,5 +1,5 @@
 from math import log
-from numpy import number
+import json
 import requests
 
 FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
@@ -53,8 +53,7 @@ def get_total_social_search_results(place):
 def get_location_score(place, city):
     distance_from_centre = get_distance_from_centre(place, city)
     print(distance_from_centre)
-    print(city["name"])
-    score = 2 - (distance_from_centre * (10 ** 3))
+    score = 3 - ((distance_from_centre * (10 ** 3)) / 3)
 
     if score < 0:
         score = 0
@@ -71,28 +70,42 @@ def get_social_score(place):
 
     return score
 
+def get_score(place_name):
+    places = get_place_by_name(place_name)
+
+    output = []
+
+    for place in places["results"]:
+        city_name = get_city_name(place)
+        if city_name == -1:
+            continue
+
+        city = get_place_by_name(city_name)["results"][0]
+
+        location_score = get_location_score(place, city)
+        ratings_score = place["rating"]
+        social_score = get_social_score(place)
+
+        total_score = ratings_score + location_score + social_score
+        total_score = int(total_score * 10) / 10
+
+        print("Score:", total_score)
+        print("Ratings:", ratings_score)
+        print("Location:", location_score)
+        print("Social:", social_score)
+
+        result_output = {
+            "total_score": total_score,
+            "ratings_score": ratings_score,
+            "location_score": location_score,
+            "social_score": social_score,
+            "name": place["name"],
+            "address": place["formatted_address"],
+            "status": place["business_status"],
+            "online_user_ratings": place["user_ratings_total"]
+        }
+
+        return json.dumps(result_output)
+
 place_name = input("Enter place: ")
-
-places = get_place_by_name(place_name)
-print(places["status"])
-
-for place in places["results"]:
-    place_id = place["place_id"]
-    place_details = get_place_details(place_id)
-    place_reviews = get_place_reviews(place_details)
-
-    city_name = get_city_name(place)
-    if city_name == -1:
-        continue
-
-    city = get_place_by_name(city_name)["results"][0]
-
-    location_score = get_location_score(place, city)
-    ratings_score = place["rating"]
-    social_score = get_social_score(place)
-
-    total_score = ratings_score + location_score + social_score
-    print("Score:", int(total_score))
-    print("Ratings:", ratings_score)
-    print("Location:", location_score)
-    print("Social:", social_score)
+print(get_score(place_name))
