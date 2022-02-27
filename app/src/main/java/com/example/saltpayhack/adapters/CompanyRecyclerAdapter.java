@@ -51,11 +51,7 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
         CompanyModel company = mCompaniesList.get(position);
         holder.tv_companyName.setText(company.getCompanyName());
         //TODO change to calculated rating
-        holder.tv_calculatedRating.setText(
-                new StringBuilder(company.getScrapedRating()+"")
-                .append("/10.0")
-                .toString()
-        );
+        holder.tv_calculatedRating.setText("0.0/10");
     }
 
     @Override

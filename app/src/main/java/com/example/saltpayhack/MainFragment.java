@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -31,7 +30,6 @@ public class MainFragment extends Fragment implements
 
     // UI Components
     private RecyclerView mRecyclerView;
-    private Toolbar mToolbar;
 
     // Variables
     private Context mContext;
@@ -80,9 +78,6 @@ public class MainFragment extends Fragment implements
 
     private void initUI(View view) {
         mRecyclerView = view.findViewById(R.id.fragment_main_rv);
-        mToolbar = view.findViewById(R.id.activity_main_tb);
-        setHasOptionsMenu(true);
-
     }
 
     private void setListeners() {
@@ -116,8 +111,6 @@ public class MainFragment extends Fragment implements
         MenuItem searchItem = menu.findItem(R.id.menu_itm_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        System.out.println(searchView);
-        System.out.println(searchItem);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+    
+    // Constants
+    private static final String TAG = "MainActivity";
 
     // UI Components
     private DrawerLayout mDrawerLayout;
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        System.out.println("HERE");
+        Log.d(TAG, "onNavigationItemSelected: HERE");
         switch (item.getItemId()) {
             case R.id.menu_drawer_itm_main:
                 getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new MainFragment()).commit();
