@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/menu_drawer_itm_main"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Main" />
+        <item
             android:id="@+id/menu_drawer_itm_likes"
             android:icon="@drawable/ic_baseline_thumb_up_24"
             android:title="Likes" />

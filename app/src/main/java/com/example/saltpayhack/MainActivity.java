@@ -1,84 +1,82 @@
 package com.example.saltpayhack;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saltpayhack.cards.Card;
 import com.example.saltpayhack.cards.CardManager;
+import com.example.saltpayhack.cards.MainFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
 
-    private FloatingActionButton fab_like, fab_dislike, fab_favourite, fab_back, fab_forward;
-    private View mCardView;
-    private TextView title, rating;
+    // UI Components
+    private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
     private Toolbar mToolbar;
-    private CardManager mCardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCardManager = new CardManager();
 
         initUI();
-        setListeners();
+        setListener();
+        setNavigation();
     }
 
     private void initUI() {
-        fab_like = findViewById(R.id.activity_main_fab_like);
-        fab_dislike = findViewById(R.id.activity_main_fab_dislike);
-        fab_favourite = findViewById(R.id.activity_main_fab_favourite);
-        fab_back = findViewById(R.id.activity_main_fab_back);
-        fab_forward = findViewById(R.id.activity_main_fab_forward);
-        mCardView = findViewById(R.id.activity_main_card_view);
+        mDrawerLayout = findViewById(R.id.fragment_main_dl);
+        mNavigationView = findViewById(R.id.activity_main_nv_navView);
 
-        title = findViewById(R.id.company_name);
-        rating = findViewById(R.id.textView2);
-        title.setText(Card.getTestCard().cardInfo.name);
-        rating.setText(String.format("%s", Card.getTestCard().cardInfo.rating));
+        mToolbar = findViewById(R.id.activity_main_tb);
+        setSupportActionBar(mToolbar);
     }
 
-    private void setListeners() {
-        fab_like.setOnClickListener(this);
-        fab_dislike.setOnClickListener(this);
-        fab_favourite.setOnClickListener(this);
-        fab_back.setOnClickListener(this);
-        fab_forward.setOnClickListener(this);
+    private void setListener() {
+        mNavigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void setNavigation() {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
-    public void onClick(View view) {
-        System.out.println(view.getId());
-        Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show();
-
-        switch (view.getId()) {
-            case R.id.activity_main_fab_back:
-                Toast.makeText(this, "Backward", Toast.LENGTH_SHORT).show();
-                mCardManager.swipeLeft();
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        System.out.println("HERE");
+        switch (item.getItemId()) {
+            case R.id.menu_drawer_itm_main:
+                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new MainFragment()).commit();
                 break;
-            case R.id.activity_main_fab_like:
-                Toast.makeText(this, "Like", Toast.LENGTH_SHORT).show();
-                mCardManager.addToLikes(mCardManager.getCurrentCard());
+            case R.id.menu_drawer_itm_likes:
+                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new LikesFragment()).commit();
                 break;
-            case R.id.activity_main_fab_favourite:
-                Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
-                mCardManager.addToFavourites(mCardManager.getCurrentCard());
+            case R.id.menu_drawer_itm_dislikes:
+                getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fl_container, new DislikesFragment()).commit();
                 break;
-            case R.id.activity_main_fab_dislike:
-                Toast.makeText(this, "Dislike", Toast.LENGTH_SHORT).show();
-                mCardManager.addToDislikes(mCardManager.getCurrentCard());
-                break;
-            case R.id.activity_main_fab_forward:
-                Toast.makeText(this, "Forward", Toast.LENGTH_SHORT).show();
-                mCardManager.swipeRight();
-                break;
-
         }
+        return true;
     }
 }
