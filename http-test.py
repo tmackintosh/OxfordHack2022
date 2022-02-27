@@ -1,15 +1,16 @@
 import requests
 import json
 
-ENGINE_ID = "c8129af6c4906773b"
+FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
+SOCIAL_SCRAPER_ENGINE_ID = "1825f517354ca3718"
 API_KEY = "AIzaSyDsRiDvlwLUNwqaExJoivtP_xE1_BicHio"
 
 def get_place_by_name(name):
     r = requests.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + name + "&key=" + API_KEY)
     return r.json()
 
-def get_search_results(query):
-    r = requests.get("https://customsearch.googleapis.com/customsearch/v1?cx=" + ENGINE_ID + "&q=" + query + "&key=" + API_KEY)
+def get_social_search(query):
+    r = requests.get("https://customsearch.googleapis.com/customsearch/v1?cx=" + SOCIAL_SCRAPER_ENGINE_ID + "&q=" + query + "&key=" + API_KEY)
     return r.json()
 
 def get_place_details(place_id):
@@ -44,7 +45,14 @@ def get_distance_from_centre(place, city):
     # Pythagoras' Theorem
     return ((place_lat - city_lat) ** 2) + ((place_lng - city_lng) ** 2)
 
-places = get_place_by_name(input("Enter place: "))
+def get_total_social_search_results(place):
+    search_results_object = get_social_search(place["name"])
+    top_search_result = search_results_object["queries"]["request"][0]
+    return top_search_result["totalResults"]
+
+place_name = input("Enter place: ")
+
+places = get_place_by_name(place_name)
 
 for place in places["results"]:
     place_id = place["place_id"]
@@ -55,3 +63,4 @@ for place in places["results"]:
     city = get_place_by_name(city_name)["results"][0]
 
     distance_from_centre = get_distance_from_centre(place, city)
+    number_of_social_search_results = get_total_social_search_results(place)
