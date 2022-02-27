@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -51,7 +50,7 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
         CompanyModel company = mCompaniesList.get(position);
         holder.tv_companyName.setText(company.getCompanyName());
         //TODO change to calculated rating
-
+        holder.tv_calculatedRating.setText("0.0/10");
     }
 
     @Override
@@ -109,8 +108,8 @@ public class CompanyRecyclerAdapter extends RecyclerView.Adapter<CompanyRecycler
 
         public ViewHolder(View itemView, OnCompanyClickListener onCompanyClickListener) {
             super(itemView);
-            tv_companyName = itemView.findViewById(R.id.card_company_name);
-            tv_calculatedRating = itemView.findViewById(R.id.card_rating);
+            tv_companyName = itemView.findViewById(R.id.row_card_tv_companyName);
+            tv_calculatedRating = itemView.findViewById(R.id.row_card_tv_overallRating);
             btn_like = itemView.findViewById(R.id.card_btn_like);
             btn_dislike = itemView.findViewById(R.id.card_btn_dislike);
 
