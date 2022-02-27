@@ -28,3 +28,9 @@ for place in places["results"]:
     place_id = place["place_id"]
     place_details = get_place_details(place_id)
     place_reviews = get_place_reviews(place_details)
+
+    for review in place_reviews:
+        try:
+            print(review["text"])
+        except:
+            continue
