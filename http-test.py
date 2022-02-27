@@ -1,5 +1,6 @@
 from math import log
 import json
+from numpy import number
 import requests
 
 FINDER_SEARCH_ENGINE_ID = "c8129af6c4906773b"
@@ -48,11 +49,14 @@ def get_distance_from_centre(place, city):
 def get_total_social_search_results(place):
     search_results_object = get_social_search(place["name"])
     top_search_result = search_results_object["queries"]["request"][0]
-    return top_search_result["totalResults"]
+
+    try:
+        return top_search_result["totalResults"]
+    except:
+        return 0
 
 def get_location_score(place, city):
     distance_from_centre = get_distance_from_centre(place, city)
-    print(distance_from_centre)
     score = 3 - ((distance_from_centre * (10 ** 3)) / 3)
 
     if score < 0:
@@ -62,7 +66,12 @@ def get_location_score(place, city):
 
 def get_social_score(place):
     number_of_social_search_results = int(get_total_social_search_results(place))
-    order_of_magnitude = int(log(number_of_social_search_results, 10))
+
+    if number_of_social_search_results == 0:
+        order_of_magnitude = 0
+    else:
+        order_of_magnitude = int(log(number_of_social_search_results, 10))
+
     score = order_of_magnitude / 3.5
 
     if score > 3:
@@ -72,8 +81,6 @@ def get_social_score(place):
 
 def get_score(place_name):
     places = get_place_by_name(place_name)
-
-    output = []
 
     for place in places["results"]:
         city_name = get_city_name(place)
@@ -89,11 +96,6 @@ def get_score(place_name):
         total_score = ratings_score + location_score + social_score
         total_score = int(total_score * 10) / 10
 
-        print("Score:", total_score)
-        print("Ratings:", ratings_score)
-        print("Location:", location_score)
-        print("Social:", social_score)
-
         result_output = {
             "total_score": total_score,
             "ratings_score": ratings_score,
@@ -107,5 +109,13 @@ def get_score(place_name):
 
         return json.dumps(result_output)
 
-place_name = input("Enter place: ")
-print(get_score(place_name))
+def get_score_from_json(json_input):
+    readable = json.loads(json_input)
+    output = []
+
+    for business in readable:
+        name = business["name"]
+        print("Assessing", name)
+        output.append(get_score(name))
+
+    return output
