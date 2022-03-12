@@ -1,14 +1,17 @@
 # Oxford hack mini challenge
 
-See the full challenge brief, prizes and deadline at https://saltpay.co/oxfordhack.
+An application to score and rank any business in the world given the following metrics:
+* How present they are online
+* Customer ratings
+* How accessible they are physically
 
-Fork this repostory and fill out your details below:
+## How it works
 
-## Your details
+I assessed how present a business is onlnie by creating a Google Custom Search Engine to scrape popular social media websites including Facebook and LinkedIn for how present the company is by calculating how many search results appear on each website.
 
-- Name: Tom Mackintosh
-- Email: tm953@bath.ac.uk
-- LinkedIn: https://www.linkedin.com/in/tom-mackintosh-7a731511a/
+I saw how well customers rated a business by using Google Maps API to view public ratings for the business and calculated an average score.
+
+I assessed how physically accessible a business is by using Google Maps API to find the longitude and latitude of both a business and the centre of the town where the business is and calculated how far they were.
 
 ## Getting Started
 
